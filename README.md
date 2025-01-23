@@ -89,9 +89,7 @@ python -u test_base.py \
 
 3. **Evaluation Configurations**: Make sure to select the correct configuration file based on your dataset (`<DATASET>` in the commands above), whether for the closed-world or open-world setting.
 
-4. **Model Optimization**: The performance of the model may vary across datasets. Make sure to monitor the results and adjust hyperparameters like the learning rate, batch size, and epoch count if necessary.
-
-5. **Troubleshooting**: In case of issues with downloading datasets or model weights, check your internet connection or the validity of the provided download links.
+4. **Troubleshooting**: In case of issues with downloading datasets or model weights, check your internet connection or the validity of the provided download links.
 
 
 ## Acknowledgement

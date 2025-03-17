@@ -16,7 +16,7 @@ model:
   attr_inference_weight: 1.0
   obj_loss_weight: 1.0
   obj_inference_weight: 1.0
-  #inference_weight set as 0.1,0.9,0.9 for close-world setting
+  #inference_weight set as 0.1,0.9,0.9 for testing in close-world setting
 
 
 train:

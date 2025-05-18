@@ -6,7 +6,7 @@
 
 
 
-##⚙️Project Setup and Requirements
+## ⚙️Project Setup and Requirements
 
 To run the project, follow the steps below.
 

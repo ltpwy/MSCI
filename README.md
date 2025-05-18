@@ -6,7 +6,7 @@
 
 
 
-## ⚙️Project Setup and Requirements
+##⚙️Project Setup and Requirements
 
 To run the project, follow the steps below.
 
@@ -88,7 +88,7 @@ python -u test_base.py \
 ```
 
 
-## 📊 Model Performance Comparison 
+## 📊Model Performance Comparison 
 
 <h3>Performance in Closed-World Setting</h3>
 
@@ -159,7 +159,7 @@ python -u test_base.py \
 
 
 
-## 📝 Notes
+## 📝Notes
 
 1. **Ensure Directories Are Correct**: Before running the commands, verify that the paths to the model files, datasets, and save directories are correctly specified. Replace placeholders like `<CLIP_MODEL_ROOT>`, `<DATASET_ROOT>`, and `<SAVE_ROOT>` with the actual paths.
 

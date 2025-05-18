@@ -170,7 +170,7 @@ python -u test_base.py \
 4. **Troubleshooting**: In case of issues with downloading datasets or model weights, check your internet connection or the validity of the provided download links.
 
 
-## Acknowledgement
+## 🙏Acknowledgement
 
 Our code references the following projects:
 

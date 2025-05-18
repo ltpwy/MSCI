@@ -1,5 +1,10 @@
 # MSCI: Addressing CLIP's Inherent Limitations for Compositional Zero-Shot Learning
 
+## Model Structure
+
+
+
+
 ## Project Setup and Requirements
 
 To run the project, follow the steps below.

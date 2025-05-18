@@ -1,7 +1,7 @@
 # MSCI: Addressing CLIP's Inherent Limitations for Compositional Zero-Shot Learning
 
 ## Model Structure
-![项目结构图](./images/structure.jpg)
+![项目结构图](./github_structure.jpg)
 
 
 

@@ -1,12 +1,12 @@
 # MSCI: Addressing CLIP's Inherent Limitations for Compositional Zero-Shot Learning
 
-## Model Structure
+## 🧠Model Structure
 ![项目结构图](./github_structure.jpg)
 
 
 
 
-## Project Setup and Requirements
+## ⚙️Project Setup and Requirements
 
 To run the project, follow the steps below.
 
@@ -41,7 +41,7 @@ Once downloaded, run the following command to set up the datasets:
 sh download_data.sh
 ```
 
-## Model Training
+## 🏋️Model Training
 
 ### Training in Closed-World Setting
 
@@ -90,41 +90,76 @@ python -u test_base.py \
 
 ## 📊 Model Performance Comparison 
 
-### Performance in Closed-World Setting
-| Model | Venue | MIT-States S | U | H | AUC | UT-Zappos S | U | H | AUC | C-GQA S | U | H | AUC |
-|-------|--------|--------------|----|----|-----|-------------|----|----|-----|----------|----|----|-----|
-| CSP | ICLR | 46.6 | 49.9 | 36.3 | 19.4 | 64.2 | 66.2 | 46.6 | 33.0 | 28.8 | 26.8 | 20.5 | 6.2 |
-| DFSP | CVPR | 46.9 | 52.0 | 37.3 | 20.6 | 66.7 | 71.7 | 47.2 | 36.9 | 38.2 | 32.9 | 27.1 | 10.5 |
-| HPL | IJCAI | 47.5 | 50.6 | 37.3 | 20.2 | 63.0 | 68.8 | 48.2 | 35.0 | 30.8 | 28.4 | 22.4 | 7.2 |
-| GIPCOL | WACV | 48.5 | 49.6 | 36.6 | 19.9 | 65.0 | 68.5 | 48.8 | 36.2 | 31.9 | 28.4 | 22.5 | 7.1 |
-| Troika | CVPR | 49.0 | _53.0_ | _39.3_ | 22.1 | 66.8 | 73.8 | _54.6_ | _41.7_ | _41.0_ | _35.7_ | _29.4_ | _12.4_ |
-| CDS-CZSL | CVPR | **50.3** | 52.9 | 39.2 | _22.4_ | 63.9 | _74.8_ | 52.7 | 39.5 | 38.3 | 34.2 | 28.1 | 11.1 |
-| PLID | ECCV | 49.7 | 52.4 | 39.0 | 22.1 | _67.3_ | 68.8 | 52.4 | 38.7 | 38.8 | 33.0 | 27.9 | 11.0 |
-| MSCI | IJCAI | _50.2_ | **53.4** | **39.9** | **22.8** | **67.4** | **75.5** | **59.2** | **45.8** | **42.4** | **38.2** | **31.7** | **14.2** |
+<h3>Performance in Closed-World Setting</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th rowspan="2">Model</th>
+      <th rowspan="2">Venue</th>
+      <th colspan="4">MIT-States</th>
+      <th colspan="4">UT-Zappos</th>
+      <th colspan="4">C-GQA</th>
+    </tr>
+    <tr>
+      <th>S</th><th>U</th><th>H</th><th>AUC</th>
+      <th>S</th><th>U</th><th>H</th><th>AUC</th>
+      <th>S</th><th>U</th><th>H</th><th>AUC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>CSP</td><td>ICLR</td><td>46.6</td><td>49.9</td><td>36.3</td><td>19.4</td><td>64.2</td><td>66.2</td><td>46.6</td><td>33.0</td><td>28.8</td><td>26.8</td><td>20.5</td><td>6.2</td></tr>
+    <tr><td>DFSP</td><td>CVPR</td><td>46.9</td><td>52.0</td><td>37.3</td><td>20.6</td><td>66.7</td><td>71.7</td><td>47.2</td><td>36.9</td><td>38.2</td><td>32.9</td><td>27.1</td><td>10.5</td></tr>
+    <tr><td>HPL</td><td>IJCAI</td><td>47.5</td><td>50.6</td><td>37.3</td><td>20.2</td><td>63.0</td><td>68.8</td><td>48.2</td><td>35.0</td><td>30.8</td><td>28.4</td><td>22.4</td><td>7.2</td></tr>
+    <tr><td>GIPCOL</td><td>WACV</td><td>48.5</td><td>49.6</td><td>36.6</td><td>19.9</td><td>65.0</td><td>68.5</td><td>48.8</td><td>36.2</td><td>31.9</td><td>28.4</td><td>22.5</td><td>7.1</td></tr>
+    <tr><td>Troika</td><td>CVPR</td><td>49.0</td><td><em>53.0</em></td><td><em>39.3</em></td><td>22.1</td><td>66.8</td><td>73.8</td><td><em>54.6</em></td><td><em>41.7</em></td><td><em>41.0</em></td><td><em>35.7</em></td><td><em>29.4</em></td><td><em>12.4</em></td></tr>
+    <tr><td>CDS-CZSL</td><td>CVPR</td><td><strong>50.3</strong></td><td>52.9</td><td>39.2</td><td><em>22.4</em></td><td>63.9</td><td><em>74.8</em></td><td>52.7</td><td>39.5</td><td>38.3</td><td>34.2</td><td>28.1</td><td>11.1</td></tr>
+    <tr><td>PLID</td><td>ECCV</td><td>49.7</td><td>52.4</td><td>39.0</td><td>22.1</td><td><em>67.3</em></td><td>68.8</td><td>52.4</td><td>38.7</td><td>38.8</td><td>33.0</td><td>27.9</td><td>11.0</td></tr>
+    <tr><td>MSCI</td><td>IJCAI</td><td><em>50.2</em></td><td><strong>53.4</strong></td><td><strong>39.9</strong></td><td><strong>22.8</strong></td><td><strong>67.4</strong></td><td><strong>75.5</strong></td><td><strong>59.2</strong></td><td><strong>45.8</strong></td><td><strong>42.4</strong></td><td><strong>38.2</strong></td><td><strong>31.7</strong></td><td><strong>14.2</strong></td></tr>
+  </tbody>
+</table>
+
+
+
+<h3>Performance in Open-World Setting</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th rowspan="2">Model</th>
+      <th rowspan="2">Venue</th>
+      <th colspan="4">MIT-States</th>
+      <th colspan="4">UT-Zappos</th>
+      <th colspan="4">C-GQA</th>
+    </tr>
+    <tr>
+      <th>S</th><th>U</th><th>H</th><th>AUC</th>
+      <th>S</th><th>U</th><th>H</th><th>AUC</th>
+      <th>S</th><th>U</th><th>H</th><th>AUC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>CSP</td><td>ICLR</td><td>46.3</td><td>15.7</td><td>17.4</td><td>5.7</td><td>64.1</td><td>44.1</td><td>38.9</td><td>22.7</td><td>28.7</td><td>5.2</td><td>6.9</td><td>1.2</td></tr>
+    <tr><td>DFSP</td><td>CVPR</td><td>47.5</td><td>18.5</td><td>19.3</td><td>6.8</td><td>66.8</td><td>60.0</td><td>44.0</td><td>30.3</td><td>38.3</td><td>7.2</td><td>10.4</td><td>2.4</td></tr>
+    <tr><td>HPL</td><td>IJCAI</td><td>46.4</td><td>18.9</td><td>19.8</td><td>6.9</td><td>63.4</td><td>48.1</td><td>40.2</td><td>24.6</td><td>30.1</td><td>5.8</td><td>7.5</td><td>1.4</td></tr>
+    <tr><td>GIPCOL</td><td>WACV</td><td>48.5</td><td>16.0</td><td>17.9</td><td>6.3</td><td>65.0</td><td>45.0</td><td>40.1</td><td>23.5</td><td>31.6</td><td>5.5</td><td>7.3</td><td>1.3</td></tr>
+    <tr><td>Troika</td><td>CVPR</td><td>48.8</td><td>18.7</td><td>20.1</td><td>7.2</td><td>66.4</td><td>61.2</td><td>47.8</td><td><em>33.0</em></td><td><em>40.8</em></td><td>7.9</td><td>10.9</td><td><em>2.7</em></td></tr>
+    <tr><td>CDS-CZSL</td><td>CVPR</td><td><strong>49.4</strong></td><td><strong>21.8</strong></td><td><strong>22.1</strong></td><td><strong>8.5</strong></td><td>64.7</td><td><em>61.3</em></td><td><em>48.2</em></td><td>32.3</td><td>37.6</td><td><em>8.2</em></td><td><em>11.6</em></td><td><em>2.7</em></td></tr>
+    <tr><td>PLID</td><td>ECCV</td><td>49.1</td><td>18.7</td><td>20.4</td><td>7.3</td><td><strong>67.6</strong></td><td>55.5</td><td>46.6</td><td>30.8</td><td>39.1</td><td>7.5</td><td>10.6</td><td>2.5</td></tr>
+    <tr><td>MSCI</td><td>IJCAI</td><td><em>49.2</em></td><td><em>20.6</em></td><td><em>21.2</em></td><td><em>7.9</em></td><td><em>67.4</em></td><td><strong>63.0</strong></td><td><strong>53.2</strong></td><td><strong>37.3</strong></td><td><strong>42.0</strong></td><td><strong>10.6</strong></td><td><strong>13.7</strong></td><td><strong>3.8</strong></td></tr>
+  </tbody>
+</table>
+
+- **S / U / H**: Seen / Unseen / Harmonic Mean
+- **AUC**: Area Under Curve
+- **Bold**: Best result
+- *Italic*: Second-best result
 
 
 
 
-### Performance in Open-World Setting
-| Model | Venue | MIT-States S | U | H | AUC | UT-Zappos S | U | H | AUC | C-GQA S | U | H | AUC |
-|--------|--------|--------------|----|----|-----|-------------|----|----|-----|----------|----|----|-----|
-| CSP | ICLR | 46.3 | 15.7 | 17.4 | 5.7 | 64.1 | 44.1 | 38.9 | 22.7 | 28.7 | 5.2 | 6.9 | 1.2 |
-| DFSP | CVPR | 47.5 | 18.5 | 19.3 | 6.8 | 66.8 | 60.0 | 44.0 | 30.3 | 38.3 | 7.2 | 10.4 | 2.4 |
-| HPL | IJCAI | 46.4 | 18.9 | 19.8 | 6.9 | 63.4 | 48.1 | 40.2 | 24.6 | 30.1 | 5.8 | 7.5 | 1.4 |
-| GIPCOL | WACV | 48.5 | 16.0 | 17.9 | 6.3 | 65.0 | 45.0 | 40.1 | 23.5 | 31.6 | 5.5 | 7.3 | 1.3 |
-| Troika | CVPR | 48.8 | 18.7 | 20.1 | 7.2 | 66.4 | 61.2 | 47.8 | _33.0_ | _40.8_ | 7.9 | 10.9 | _2.7_ |
-| CDS-CZSL | CVPR | **49.4** | **21.8** | **22.1** | **8.5** | 64.7 | _61.3_ | _48.2_ | 32.3 | 37.6 | _8.2_ | _11.6_ | _2.7_ |
-| PLID | ECCV | 49.1 | 18.7 | 20.4 | 7.3 | **67.6** | 55.5 | 46.6 | 30.8 | 39.1 | 7.5 | 10.6 | 2.5 |
-| MSCI | IJCAI | _49.2_ | _20.6_ | _21.2_ | _7.9_ | _67.4_ | **63.0** | **53.2** | **37.3** | **42.0** | **10.6** | **13.7** | **3.8** |
 
-> **Notes**:
-> - **S / U / H**: Seen / Unseen / Harmonic Mean
-> - **AUC**: Area Under Curve  
-> - **Bold**: Best result  
-> - _Italic_: Second-best result
-
-
-## Notes
+## 📝 Notes
 
 1. **Ensure Directories Are Correct**: Before running the commands, verify that the paths to the model files, datasets, and save directories are correctly specified. Replace placeholders like `<CLIP_MODEL_ROOT>`, `<DATASET_ROOT>`, and `<SAVE_ROOT>` with the actual paths.
 

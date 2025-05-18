@@ -87,6 +87,43 @@ python -u test_base.py \
 --load_model <SAVE_ROOT>/<DATASET>/val_best.pt
 ```
 
+
+## 📊 Model Performance Comparison 
+
+### Performance in Closed-World Setting
+| Model | Venue | MIT-States S | U | H | AUC | UT-Zappos S | U | H | AUC | C-GQA S | U | H | AUC |
+|-------|--------|--------------|----|----|-----|-------------|----|----|-----|----------|----|----|-----|
+| CSP | ICLR | 46.6 | 49.9 | 36.3 | 19.4 | 64.2 | 66.2 | 46.6 | 33.0 | 28.8 | 26.8 | 20.5 | 6.2 |
+| DFSP | CVPR | 46.9 | 52.0 | 37.3 | 20.6 | 66.7 | 71.7 | 47.2 | 36.9 | 38.2 | 32.9 | 27.1 | 10.5 |
+| HPL | IJCAI | 47.5 | 50.6 | 37.3 | 20.2 | 63.0 | 68.8 | 48.2 | 35.0 | 30.8 | 28.4 | 22.4 | 7.2 |
+| GIPCOL | WACV | 48.5 | 49.6 | 36.6 | 19.9 | 65.0 | 68.5 | 48.8 | 36.2 | 31.9 | 28.4 | 22.5 | 7.1 |
+| Troika | CVPR | 49.0 | _53.0_ | _39.3_ | 22.1 | 66.8 | 73.8 | _54.6_ | _41.7_ | _41.0_ | _35.7_ | _29.4_ | _12.4_ |
+| CDS-CZSL | CVPR | **50.3** | 52.9 | 39.2 | _22.4_ | 63.9 | _74.8_ | 52.7 | 39.5 | 38.3 | 34.2 | 28.1 | 11.1 |
+| PLID | ECCV | 49.7 | 52.4 | 39.0 | 22.1 | _67.3_ | 68.8 | 52.4 | 38.7 | 38.8 | 33.0 | 27.9 | 11.0 |
+| MSCI | IJCAI | _50.2_ | **53.4** | **39.9** | **22.8** | **67.4** | **75.5** | **59.2** | **45.8** | **42.4** | **38.2** | **31.7** | **14.2** |
+
+
+
+
+### Performance in Open-World Setting
+| Model | Venue | MIT-States S | U | H | AUC | UT-Zappos S | U | H | AUC | C-GQA S | U | H | AUC |
+|--------|--------|--------------|----|----|-----|-------------|----|----|-----|----------|----|----|-----|
+| CSP | ICLR | 46.3 | 15.7 | 17.4 | 5.7 | 64.1 | 44.1 | 38.9 | 22.7 | 28.7 | 5.2 | 6.9 | 1.2 |
+| DFSP | CVPR | 47.5 | 18.5 | 19.3 | 6.8 | 66.8 | 60.0 | 44.0 | 30.3 | 38.3 | 7.2 | 10.4 | 2.4 |
+| HPL | IJCAI | 46.4 | 18.9 | 19.8 | 6.9 | 63.4 | 48.1 | 40.2 | 24.6 | 30.1 | 5.8 | 7.5 | 1.4 |
+| GIPCOL | WACV | 48.5 | 16.0 | 17.9 | 6.3 | 65.0 | 45.0 | 40.1 | 23.5 | 31.6 | 5.5 | 7.3 | 1.3 |
+| Troika | CVPR | 48.8 | 18.7 | 20.1 | 7.2 | 66.4 | 61.2 | 47.8 | _33.0_ | _40.8_ | 7.9 | 10.9 | _2.7_ |
+| CDS-CZSL | CVPR | **49.4** | **21.8** | **22.1** | **8.5** | 64.7 | _61.3_ | _48.2_ | 32.3 | 37.6 | _8.2_ | _11.6_ | _2.7_ |
+| PLID | ECCV | 49.1 | 18.7 | 20.4 | 7.3 | **67.6** | 55.5 | 46.6 | 30.8 | 39.1 | 7.5 | 10.6 | 2.5 |
+| MSCI | IJCAI | _49.2_ | _20.6_ | _21.2_ | _7.9_ | _67.4_ | **63.0** | **53.2** | **37.3** | **42.0** | **10.6** | **13.7** | **3.8** |
+
+> **Notes**:
+> - **S / U / H**: Seen / Unseen / Harmonic Mean
+> - **AUC**: Area Under Curve  
+> - **Bold**: Best result  
+> - _Italic_: Second-best result
+
+
 ## Notes
 
 1. **Ensure Directories Are Correct**: Before running the commands, verify that the paths to the model files, datasets, and save directories are correctly specified. Replace placeholders like `<CLIP_MODEL_ROOT>`, `<DATASET_ROOT>`, and `<SAVE_ROOT>` with the actual paths.
